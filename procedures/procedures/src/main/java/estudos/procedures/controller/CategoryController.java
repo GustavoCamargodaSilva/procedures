@@ -13,5 +13,4 @@ public interface CategoryController {
     @RequestMapping("/listarCategorias")
     public List<CategoryProjection> getAllCategories();
 
-
 }
