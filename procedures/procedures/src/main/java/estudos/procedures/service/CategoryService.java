@@ -19,4 +19,5 @@ public class CategoryService {
     public List<CategoryProjection> getAllCategories() {
         return categoryRepository.getAllCategories();
     }
+
 }
