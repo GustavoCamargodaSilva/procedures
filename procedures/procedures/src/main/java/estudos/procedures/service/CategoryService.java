@@ -1,5 +1,6 @@
 package estudos.procedures.service;
 
+import estudos.procedures.entity.Category;
 import estudos.procedures.projection.CategoryProjection;
 import estudos.procedures.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +15,8 @@ public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = false)
     public List<CategoryProjection> getAllCategories() {
         return categoryRepository.getAllCategories();
     }
-
 }

@@ -10,7 +10,7 @@ import java.util.List;
 @RequestMapping("/category")
 public interface CategoryController {
 
-    @RequestMapping("/listarCategorias")
+    @RequestMapping("/listarcategorias")
     public List<CategoryProjection> getAllCategories();
 
 }
