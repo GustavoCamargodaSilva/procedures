@@ -1,4 +1,4 @@
-package estudos.procedures.entitie;
+package estudos.procedures.entity;
 
 import jakarta.persistence.*;
 
