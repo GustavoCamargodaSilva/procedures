@@ -19,5 +19,4 @@ public class CategoryService {
         return categoryRepository.getAllCategories();
     }
 
-
 }
