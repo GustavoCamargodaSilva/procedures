@@ -1,31 +1,26 @@
 package estudos.procedures.dto;
 
+import estudos.procedures.entity.Category;
+import jakarta.persistence.Column;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class CategoryDTO {
 
     private Long id;
+    @NotNull(message = "Nome obrigatório")
+    @Column(length = 40)
     private String name;
 
-    public CategoryDTO() {
-    }
-
-    public CategoryDTO(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public CategoryDTO(Category category) {
+        this.id = category.getId();
+        this.name = category.getName();
     }
 }

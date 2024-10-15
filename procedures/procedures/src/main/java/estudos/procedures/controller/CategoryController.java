@@ -1,8 +1,8 @@
 package estudos.procedures.controller;
 
-import estudos.procedures.projection.CategoryProjection;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import estudos.procedures.dto.CategoryDTO;
+import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -10,7 +10,13 @@ import java.util.List;
 @RequestMapping("/category")
 public interface CategoryController {
 
-    @RequestMapping("/listarcategorias")
-    public List<CategoryProjection> getAllCategories();
+    @GetMapping("/listarcategorias")
+    public List<CategoryDTO> getAllCategories();
+
+    @PostMapping("/cadastrar")
+    public CategoryDTO createCategory(@RequestBody CategoryDTO categoryDTO);
+
+    @GetMapping("/procurarcategoria/{id}")
+    public CategoryDTO findCategoryById(@PathVariable Long id);
 
 }
